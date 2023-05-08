@@ -5,6 +5,8 @@ import { MainContainer, ChatContainer, MessageList, Message, MessageInput, Typin
 
 import axios from "axios";
 
+const host = "http://localhost:5000"
+
 // "Explain things like you would to a 10 year old learning how to code."
 const systemMessage = { //  Explain things like you're talking to a software professional with 5 years of experience.
   "role": "system", "content": "Explain things like you're talking to a software professional with 2 years of experience."
@@ -64,7 +66,7 @@ function App() {
       ]
     }
 
-    await fetch("http://127.0.0.1:5000/glados/post-message",
+    await fetch(host+"/glados/post-message",
     {
       method: "POST",
       headers: {
@@ -86,7 +88,7 @@ function App() {
 
   // play GlaDOS voice
   async function play_sound(){
-    let url = "http://127.0.0.1:5000/glados/get-audio"
+    let url = host+"/glados/get-audio"
     const { data } = await axios.get(url, {
       responseType: 'arraybuffer',
       headers: {
