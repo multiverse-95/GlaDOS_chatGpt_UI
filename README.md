@@ -19,6 +19,6 @@ GlaDOS ChatGpt UI
 2. npm run dev
 8. Перейдите в браузер с чатом
 ```console
-http://127.0.0.1:5173/
+http://localhost:5173/
 ```
 
